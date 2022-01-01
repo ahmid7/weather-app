@@ -1,0 +1,282 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.weather-container{
+    display: flex;
+    min-width:100vw;
+    min-height:100vh;
+    color:white;
+}
+.trial{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:2rem 0 5rem 2rem;
+
+    .weather-header{
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+    .weather-details{
+        font-family: 'Inter', sans-serif;
+        display:flex;
+        column-gap:1.1rem;
+        .weather-temp{
+            font-size: 3.5rem;
+            display: flex;
+            align-items: flex-end;
+        }
+        .weather-city-date{
+            display: flex;
+            flex-direction:column;
+            row-gap: 0.3rem;
+            justify-content: flex-end;
+            .city{
+                font-size: 1.5rem;
+            }
+            .date{
+                display: flex;
+                column-gap:0.2rem;
+                font-size:0.75rem;
+            }
+        }
+    }
+}
+.location{
+    color: white;
+    flex-basis: 20%;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(94, 84, 84, 0.46);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(94, 84, 84, 0.52);
+    form{
+        display: flex;
+        align-items: flex-end;
+        label{
+            flex-basis: 85%;
+            border-bottom: 2px solid  white;
+            input{
+                width: 100%;
+                font-size: 1.3rem;
+                padding: 0.5rem 0 0.5rem 1rem;
+                outline: none;
+                border:none;
+                background: inherit;
+                color: white;
+            }
+        }
+        .search-icon{
+            flex-basis:15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 0;
+            background: yellow;
+        }
+    }
+    .clickLocation{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.7rem;
+        padding: 2rem 1rem;
+        font-size: 1rem;
+        p{
+            cursor: pointer;
+        }
+    }
+
+    .line-seperator{
+        width: 100%;
+        height: 1px;
+        border-bottom:2px solid white;
+    }
+    .wld{
+        padding: 2rem 1rem;
+        h2{
+            padding:1.5rem 0;
+        }
+        .wld-details{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            padding:1rem  0;
+            .indiv-details{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width:1560px){
+
+    .trial{
+        flex-basis: 75%;
+    }
+
+    .location{
+        color: white;
+        flex-basis: 25%;
+        form{
+            label{
+                input{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .clickLocation{
+            padding: 2.3rem 1rem;
+        }
+        .wld{
+            padding: 2rem 1rem;
+            h2{
+                font-size: 1.2rem;
+            }
+        }
+    
+    
+    }
+}
+@media screen and (max-width:1024px){
+    .trial{
+        flex-basis: 65%;
+        .weather-header{
+            font-size: 0.6rem;
+        }
+        .weather-details{
+            column-gap:1.1rem;
+            .weather-temp{
+                font-size: 3rem;
+            }
+            .weather-city-date{
+                .city{
+                    font-size: 1.5rem;
+                }
+                .date{
+                    font-size:0.7rem;
+                }
+            }
+            .weather-icon{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .icon-descr{
+                    p{
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+    .location{
+        flex-basis:35%;
+        form{
+            label{
+                flex-basis: 82%;
+                input{
+                    font-size: 1.1rem;
+                }
+            }
+            .search-icon{
+                flex-basis: 18%;
+            }
+        }
+        .clickLocation{
+            font-size: 0.95rem;
+        }
+    
+        .wld{
+            h2{
+                padding:1.5rem 0;
+                font-size: 1.1rem;
+            }
+            .wld-details{
+                font-size: 0.9rem;
+                .indiv-details{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    
+    
+    }
+}
+@media screen and (max-width:768px){
+    .trial{
+        flex-basis: 50%;
+        .weather-header{
+            font-size: 0.6rem;
+        }
+        .weather-details{
+            column-gap:1.1rem;
+            .weather-temp{
+                font-size: 3rem;
+            }
+            .weather-city-date{
+                .city{
+                    font-size: 1.5rem;
+                }
+                .date{
+                    font-size:0.7rem;
+                }
+            }
+            .weather-icon{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .icon-descr{
+                    p{
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+    .location{
+        flex-basis:50%;
+        form{
+            label{
+                flex-basis: 82%;
+                input{
+                    font-size: 1.1rem;
+                }
+            }
+            .search-icon{
+                flex-basis: 18%;
+            }
+        }
+        .clickLocation{
+            font-size: 0.95rem;
+        }
+    
+        .wld{
+            h2{
+                padding:1.5rem 0;
+                font-size: 1.1rem;
+            }
+            .wld-details{
+                font-size: 0.9rem;
+                .indiv-details{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    
+    
+    }
+}
