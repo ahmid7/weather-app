@@ -352,3 +352,16 @@
         display: block;
     }
 }
+@media screen and (max-width:450px){
+    .location{
+        flex-basis:70%;
+        form{
+            label{
+                flex-basis: 75%;
+            }
+            .search-icon{
+                flex-basis: 25%;
+            }
+        }
+    }
+}
