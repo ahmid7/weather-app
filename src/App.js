@@ -10,7 +10,7 @@ function App() {
   const [child,setChild] = useState('London');
   const [search,setSearch] = useState('london');
   const [enter,setEnter] = useState('london');
-  let image = 'Clouds';
+  const [menuClick,setMenuClick] = useState(false);
   const updateEnter = (e) =>{
     if(e.charCode === 13){
       setData([])
@@ -27,14 +27,18 @@ function App() {
     setLocation(search);
     setData([])
   }
-
   function handleChildComponent(value){
     setData([]);
     setChild(value);
     setSearch(value);
     setLocation(value);
   }
+  function handleMenuClicked(){
+    setMenuClick(!menuClick);
+  }
+  const setheight = {
 
+  }
   useEffect(() =>{
     async function requestData(){
       const res = await fetch(
@@ -45,23 +49,18 @@ function App() {
     }
     requestData();
   },[location])
-
-
   // learn how to process .env files for api
   // recap what you learn with changing of parent state from child component
-  //further practice async 
+  //further practice async
   return (
     <div className='App'>
       <div className='detail'>
-
         {(typeof data.main != "undefined") ?(
           <div className='weather-container' style = {{backgroundImage:`url(Images/${data.weather[0].main}.jpg)`,backgroundPosition:'center',backgroundSize:'cover'}}
           >
-            <Trial weatherData={data}/>
-            <div className='location'>
-
+            <Trial weatherData={data} menuClickHandler = {handleMenuClicked}/>
+            <div className={`location ${menuClick ? "location-appear" : "location-disappear"}`}>
               <form>
-
                 <label htmlFor='location-search'>
                   <input 
                     id='search-location'
@@ -93,5 +92,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

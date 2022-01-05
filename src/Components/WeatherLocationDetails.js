@@ -22,10 +22,6 @@ const WeatherLocationDetails = ({details}) =>{
                     <span>Wind</span>
                     <span>{details.wind.speed}km/h</span>
                 </div>
-                <div className="indiv-details">
-                    <span>Description</span>
-                    <span>{details.weather[0].description}</span>
-                </div>
             </div>
         </div>
     );
