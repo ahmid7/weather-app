@@ -282,7 +282,7 @@
     }
     .trial{
         flex-basis: 100%;
-        padding-right: 2rem;
+        padding: 2rem 2rem 4.5rem 2rem;
         .weather-header{
             display: flex;
             justify-content: space-between;
@@ -295,16 +295,17 @@
                 }
             }
         }
+
         .weather-details{
             flex-flow: row wrap;
             .weather-temp{
-                font-size: 3.5rem;
+                font-size: 3rem;
                 font-weight: 600;
                 flex-basis:100%;
             }   
             .weather-city-date{
                 .city{
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                 }
                 .date{
                     font-size:0.7rem;
