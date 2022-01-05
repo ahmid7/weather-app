@@ -7,8 +7,10 @@ import WeatherLocationDetails from './Components/WeatherLocationDetails';
 function App() {
   const [data,setData] = useState([]);
   const [location,setLocation] = useState('London');
+  // eslint-disable-next-line no-unused-vars
   const [child,setChild] = useState('London');
   const [search,setSearch] = useState('london');
+  // eslint-disable-next-line no-unused-vars
   const [enter,setEnter] = useState('london');
   const [menuClick,setMenuClick] = useState(false);
   const updateEnter = (e) =>{
@@ -35,9 +37,6 @@ function App() {
   }
   function handleMenuClicked(){
     setMenuClick(!menuClick);
-  }
-  const setheight = {
-
   }
   useEffect(() =>{
     async function requestData(){
