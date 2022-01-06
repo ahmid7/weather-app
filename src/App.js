@@ -4,6 +4,7 @@ import Trial from './Components/Trial';
 import { RiSearchLine} from "react-icons/ri";
 import DefaultLocation from './Components/DefaultLocation';
 import WeatherLocationDetails from './Components/WeatherLocationDetails';
+import { BallTriangle } from 'react-loading-icons'
 function App() {
   const [data,setData] = useState([]);
   const [location,setLocation] = useState('London');
@@ -85,7 +86,9 @@ function App() {
             </div>
           </div>
         ):(
-          <div> Loading...</div>
+          <div className='loading-animation'>
+            <BallTriangle />
+          </div>
         )}
       </div>
     </div>

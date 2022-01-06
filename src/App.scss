@@ -10,6 +10,14 @@
     min-height:100vh;
     color:white;
 }
+.loading-animation{
+    background-color: rgb(24, 22, 22);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .trial{
     flex-basis: 80%;
     display: flex;
