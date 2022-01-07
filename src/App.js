@@ -58,7 +58,7 @@ function App() {
       duration:0
     }
     )
-  })
+  },[menuClick])
   useEffect(() =>{
     async function requestData(){
       const res = await fetch(
