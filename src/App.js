@@ -4,7 +4,8 @@ import Trial from './Components/Trial';
 import { RiSearchLine} from "react-icons/ri";
 import DefaultLocation from './Components/DefaultLocation';
 import WeatherLocationDetails from './Components/WeatherLocationDetails';
-import { BallTriangle } from 'react-loading-icons'
+import { BallTriangle } from 'react-loading-icons';
+import {gsap } from "gsap";
 function App() {
   const [data,setData] = useState([]);
   const [location,setLocation] = useState('London');
@@ -39,6 +40,24 @@ function App() {
   function handleMenuClicked(){
     setMenuClick(!menuClick);
   }
+  useEffect(() =>{
+    gsap.fromTo('.location-appear',
+    {
+      x:-150,
+      display:'block'
+    },
+    {
+      x:0,
+      width:"65%",
+      duration:1
+    });
+    gsap.to('.location-disappear',
+    {
+      display:'none',
+      duration:0
+    }
+    )
+  })
   useEffect(() =>{
     async function requestData(){
       const res = await fetch(

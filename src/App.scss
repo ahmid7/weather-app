@@ -333,36 +333,33 @@
     }
     .location{
         position: absolute;
-        width: 60%;
         height: 100%;
         display: none;
         .clickLocation{
-            row-gap: 1.2rem;
-            padding: 1.5rem 1rem;
-            font-size: 0.8rem;
+            row-gap: 1.5rem;
+            padding: 1.7rem 1rem;
+            font-size: 1rem;
         }
         .wld{
             padding: 0rem 1rem;
             h2{
                 padding:1rem 0;
-                font-size: 0.8rem;
+                font-size: 1.1rem;
+                letter-spacing: 1.2px;
             }
             .wld-details{
                 display: flex;
                 flex-direction: column;
                 row-gap: 1.5rem;
                 padding-bottom:0;
+                font-size: 1rem;
             }
         }
     
     }
-    .location-appear{
-        display: block;
-    }
 }
 @media screen and (max-width:450px){
     .location{
-        flex-basis:70%;
         form{
             label{
                 flex-basis: 75%;
