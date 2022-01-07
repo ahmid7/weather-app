@@ -49,6 +49,7 @@ function App() {
     {
       x:0,
       width:"65%",
+      ease:'power1.out',
       duration:1
     });
     gsap.to('.location-disappear',
