@@ -1,6 +1,4 @@
 
-
-
 const WeatherLocationDetails = ({details}) =>{
     return(
         <div className="wld">

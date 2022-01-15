@@ -8,6 +8,7 @@ const Trial = (props) =>{
     const temp = Math.round(props.weatherData.main.temp);
     const year = (current.getFullYear()).toString();
     const yearSplice = year.substring(2);
+    // inter,coded,Montserrat
     useEffect(() =>{
         const timer = setTimeout(()=> setTime(new Date()),1000);
         return() => clearTimeout(timer);
