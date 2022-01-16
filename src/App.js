@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './App.scss';
 import {useState,useEffect} from "react";
 import Trial from './Components/Trial';
@@ -10,10 +11,8 @@ function App() {
   const [data,setData] = useState([]);
   // state for api data
   const [location,setLocation] = useState('London');
-  // eslint-disable-next-line no-unused-vars
   const [child,setChild] = useState('London');
   const [search,setSearch] = useState('london');
-  // eslint-disable-next-line no-unused-vars
   const [enter,setEnter] = useState('london');
   const [menuClick,setMenuClick] = useState(false);
   const [menu,setMenu] = useState(false);
