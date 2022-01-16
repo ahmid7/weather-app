@@ -9,7 +9,6 @@ import { BallTriangle } from 'react-loading-icons';
 import {gsap } from "gsap";
 function App() {
   const [data,setData] = useState([]);
-  // state for api data
   const [location,setLocation] = useState('London');
   const [child,setChild] = useState('London');
   const [search,setSearch] = useState('london');
@@ -69,6 +68,7 @@ function App() {
         }
       )
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[menuClick])
   useEffect(() =>{
     async function requestData(){
@@ -82,7 +82,7 @@ function App() {
   },[location])
   // learn how to process .env files for api
   // recap what you learn with changing of parent state from child component
-  //further practice async
+  // further practice async`
   return (
     <div className='App'>
       <div className='detail'>
