@@ -8,6 +8,7 @@ import { BallTriangle } from 'react-loading-icons';
 import {gsap } from "gsap";
 function App() {
   const [data,setData] = useState([]);
+  // state for api data
   const [location,setLocation] = useState('London');
   // eslint-disable-next-line no-unused-vars
   const [child,setChild] = useState('London');
@@ -15,6 +16,7 @@ function App() {
   // eslint-disable-next-line no-unused-vars
   const [enter,setEnter] = useState('london');
   const [menuClick,setMenuClick] = useState(false);
+  const [menu,setMenu] = useState(false);
   const updateEnter = (e) =>{
     if(e.charCode === 13){
       setData([])
@@ -39,25 +41,35 @@ function App() {
   }
   function handleMenuClicked(){
     setMenuClick(!menuClick);
+    setMenu(true)
   }
   useEffect(() =>{
-    gsap.fromTo('.location-appear',
+    if(menuClick){
+      gsap.fromTo('.location-appear',
     {
       x:-150,
       display:'block'
     },
     {
       x:0,
-      width:"65%",
+      width:"68%",
       ease:'power1.out',
-      duration:1
+      duration:0.7
     });
-    gsap.to('.location-disappear',
-    {
-      display:'none',
-      duration:0
     }
-    )
+    if(menu && menuClick === false){
+      gsap.fromTo('.location-disappear',
+        {
+          display:'block',
+          x:0,
+        },
+        {
+          x:-300,
+          duration:1
+          
+        }
+      )
+    }
   },[menuClick])
   useEffect(() =>{
     async function requestData(){

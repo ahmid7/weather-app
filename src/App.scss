@@ -299,7 +299,8 @@
             .hamburger-container{
                 display: block;
                 .hamburger{
-                    font-size: 1.2rem;
+                    font-size: 1.35rem;
+                    filter:drop-shadow(2px 1px 1px black)
                 }
             }
         }
