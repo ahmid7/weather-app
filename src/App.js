@@ -87,7 +87,7 @@ function App() {
     <div className='App'>
       <div className='detail'>
         {(typeof data.main != "undefined") ?(
-          <div className='weather-container' style = {{backgroundImage:`url(Images/${data.weather[0].main}.jpg)`,backgroundPosition:'center',backgroundSize:'cover'}}
+          <div className='weather-container' style = {{backgroundImage:`url(Images/${data.weather[0].main}.webp)`,backgroundPosition:'center',backgroundSize:'cover'}}
           >
             <Trial weatherData={data} menuClickHandler = {handleMenuClicked}/>
             <div className={`location ${menuClick ? "location-appear" : "location-disappear"}`}>
