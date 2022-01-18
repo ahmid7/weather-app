@@ -9,12 +9,18 @@ import { BallTriangle } from 'react-loading-icons';
 import {gsap } from "gsap";
 function App() {
   const [data,setData] = useState([]);
+  // this state collects the data from the api
   const [location,setLocation] = useState('London');
   const [child,setChild] = useState('London');
+  // this state is use to change the state in a child component
   const [search,setSearch] = useState('london');
+  // this state is for when the user clicked on the search icon on the search location
   const [enter,setEnter] = useState('london');
+  // this state is for when the user clicked enter on the search location
   const [menuClick,setMenuClick] = useState(false);
+  // this state is for toggling the hamburger menu 
   const [menu,setMenu] = useState(false);
+  // this state is basically just to check if the hamburger has been clicked at all
   const updateEnter = (e) =>{
     if(e.charCode === 13){
       setData([])
@@ -50,12 +56,13 @@ function App() {
     },
     {
       x:0,
-      width:"68%",
+      width:"70%",
       ease:'power1.out',
       duration:0.7
     });
     }
     if(menu && menuClick === false){
+
       gsap.fromTo('.location-disappear',
         {
           display:'block',
@@ -80,12 +87,12 @@ function App() {
     }
     requestData();
   },[location])
-  // learn how to process .env files for api
-  // recap what you learn with changing of parent state from child component
-  // further practice async`
+
   return (
     <div className='App'>
+
       <div className='detail'>
+
         {(typeof data.main != "undefined") ?(
           <div className='weather-container' style = {{backgroundImage:`url(Images/${data.weather[0].main}.webp)`,backgroundPosition:'center',backgroundSize:'cover'}}
           >
@@ -121,6 +128,7 @@ function App() {
             <BallTriangle />
           </div>
         )}
+        
       </div>
     </div>
   );
