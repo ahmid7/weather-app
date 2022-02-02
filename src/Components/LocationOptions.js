@@ -1,6 +1,5 @@
 
-
-const DefaultLocation = (props) =>{
+const LocationOptions = (props) =>{
     return(
         <div className="clickLocation">
             <p onClick={(e) =>props.onChange(e.target.innerText)}>Birmingham</p>
@@ -11,4 +10,4 @@ const DefaultLocation = (props) =>{
     );
 }
 
-export default DefaultLocation;
+export default LocationOptions;

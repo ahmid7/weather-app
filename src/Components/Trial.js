@@ -1,7 +1,9 @@
 import {useState,useEffect} from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 
+
 const Trial = (props) =>{
+
     const current = new Date();
 
     const daysArray = ['Sun','Mon','Tues','Wednes','Thurs','Fri','Sat'];
@@ -17,9 +19,7 @@ const Trial = (props) =>{
     const yearSplice = year.substring(2);
 
     useEffect(() =>{
-
         const timer = setTimeout(()=> setTime(new Date()),1000);
-
         return() => clearTimeout(timer);
     });
 
@@ -27,37 +27,33 @@ const Trial = (props) =>{
         <section className="trial">
 
             <div className="weather-header">
-
                 <h2>WeatherApp</h2>
+                
                 <div className="hamburger-container">
-
                     <HiMenuAlt3 className="hamburger" onClick={() => {props.menuClickHandler()}}/>
-
                 </div>
             </div>
+
             <div className="weather-details">
 
                 <div className="weather-temp">
-
                     <p>{temp}&deg;c</p>
-
                 </div>
+
                 <div className="weather-city-date">
 
                     <div className="city">
-
                         {props.weatherData.name}
-
                     </div>
+
                     <div className="date">
-
                         <p>{time.toLocaleTimeString()}</p>
-
                         <p className="hypen">-</p>
-
                         <p>{`${daysArray[current.getDay()]}, ${current.getDate()} ${monthArray[current.getMonth()]}. '${yearSplice}`}</p>
                     </div>
+
                 </div>
+
                 <div className="weather-icon">
 
                     <div className="icon">

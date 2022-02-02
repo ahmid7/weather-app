@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import './App.scss';
-import {useState,useEffect} from "react";
+import './Styles/App.scss';
 import Trial from './Components/Trial';
-import { RiSearchLine} from "react-icons/ri";
-import DefaultLocation from './Components/DefaultLocation';
+import LocationOptions from './Components/LocationOptions';
 import WeatherLocationDetails from './Components/WeatherLocationDetails';
+import { RiSearchLine} from "react-icons/ri";
+import {useState,useEffect} from "react";
 import { BallTriangle } from 'react-loading-icons';
 import {gsap } from "gsap";
 function App() {
@@ -18,7 +18,7 @@ function App() {
   const [enter,setEnter] = useState('london');
   // this state is for when the user clicked enter on the search location
   const [menuClick,setMenuClick] = useState(false);
-  // this state is for toggling the hamburger menu 
+  // this state check if the user has click the hamburger before so the animations only state after the user click the hamburger, not on page load
   const [menu,setMenu] = useState(false);
   // this state is basically just to check if the hamburger has been clicked at all
   const updateEnter = (e) =>{
@@ -97,8 +97,11 @@ function App() {
           <div className='weather-container' style = {{backgroundImage:`url(Images/${data.weather[0].main}.webp)`,backgroundPosition:'center',backgroundSize:'cover'}}
           >
             <Trial weatherData={data} menuClickHandler = {handleMenuClicked}/>
+
             <div className={`location ${menuClick ? "location-appear" : "location-disappear"}`}>
+
               <form>
+
                 <label htmlFor='location-search'>
                   <input 
                     id='search-location'
@@ -107,13 +110,14 @@ function App() {
                     onKeyPress={updateEnter}
                   />
                 </label>
+
                 <div className='search-icon' onClick={updateLocation}>
                   <RiSearchLine className='s-icon'/>
                 </div>
 
               </form>
 
-              <DefaultLocation onChange={handleChildComponent}/>
+              <LocationOptions onChange={handleChildComponent}/>
 
               <div className='line-seperator'>
 
